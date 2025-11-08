@@ -87,6 +87,14 @@ async function start() {
     await pool.query('SELECT NOW()');
     fastify.log.info('Database connection established');
 
+    // Run migrations on startup (production only)
+    if (config.server.nodeEnv === 'production') {
+      fastify.log.info('Running database migrations...');
+      const { runMigrations } = require('./database/migrate');
+      await runMigrations();
+      fastify.log.info('Migrations completed successfully');
+    }
+
     // Start server
     await fastify.listen({
       port: config.server.port,

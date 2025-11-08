@@ -88,7 +88,10 @@ async function runMigrations() {
     logger.error({ error }, 'Migration failed');
     throw error;
   } finally {
-    await pool.end();
+    // Only close pool if running as standalone script
+    if (require.main === module) {
+      await pool.end();
+    }
   }
 }
 
