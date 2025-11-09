@@ -2,6 +2,27 @@
 
 A high-performance DEX order execution engine with real-time WebSocket updates, intelligent routing between Raydium and Meteora DEXs, and concurrent order processing.
 
+## 🌐 Live Demo
+
+**🚀 Live Application**: https://order-execution-engine-h86v.onrender.com
+
+**📦 GitHub Repository**: https://github.com/Raghu128/Eternal_company_task
+
+**🎥 Demo Video**: [Will be added after recording]
+
+### Try it now:
+```bash
+# Health Check
+curl https://order-execution-engine-h86v.onrender.com/api/health
+
+# Submit Order
+curl -X POST https://order-execution-engine-h86v.onrender.com/api/orders/execute \
+  -H "Content-Type: application/json" \
+  -d '{"tokenIn":"SOL","tokenOut":"USDC","amountIn":100,"orderType":"market"}'
+```
+
+---
+
 ## 🎯 Overview
 
 This system processes market orders by:

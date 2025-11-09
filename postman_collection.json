@@ -7,7 +7,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://order-execution-engine-h86v.onrender.com",
+      "value": "http://localhost:3000",
       "type": "string"
     },
     {
